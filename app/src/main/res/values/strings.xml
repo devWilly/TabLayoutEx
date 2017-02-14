@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">電影TabLayout</string>
+    <string name="app_name">電影範例</string>
     <string name="this_week">本週新片</string>
     <string name="coming_soon">即將上映</string>
     <string name="leader_board">排行榜</string>
