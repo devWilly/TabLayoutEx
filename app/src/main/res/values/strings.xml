@@ -1,3 +1,61 @@
 <resources>
-    <string name="app_name">TabLayoutEx</string>
+    <string name="app_name">電影TabLayout</string>
+    <string name="this_week">本週新片</string>
+    <string name="coming_soon">即將上映</string>
+    <string name="leader_board">排行榜</string>
+
+    <string name="week_1_title">樂高蝙蝠俠電影</string>
+    <string name="week_2_title">格雷的五十道陰影：束縛</string>
+    <string name="week_3_title">異星入境</string>
+    <string name="week_4_title">捍衛任務2：殺神回歸</string>
+    <string name="week_5_title">愛，那時此刻</string>
+
+    <string name="week_1_date_release">上映日期：2017-02-08</string>
+    <string name="week_2_date_release">上映日期：2017-02-10</string>
+    <string name="week_3_date_release">上映日期：2017-02-10</string>
+    <string name="week_4_date_release">上映日期：2017-02-10</string>
+    <string name="week_5_date_release">上映日期：2017-02-10</string>
+
+    <string name="week_1_sub_title">類型：動作、冒險、動畫</string>
+    <string name="week_2_sub_title">類型：劇情、愛情</string>
+    <string name="week_3_sub_title">類型：科幻、懸疑/驚悚</string>
+    <string name="week_4_sub_title">類型：動作</string>
+    <string name="week_5_sub_title">類型：奇幻、劇情、愛情</string>
+
+    <string name="coming_soon_1_title">七夜怪譚</string>
+    <string name="coming_soon_2_title">救命解藥</string>
+    <string name="coming_soon_3_title">合約男女</string>
+    <string name="coming_soon_4_title">機密同盟</string>
+    <string name="coming_soon_5_title">愛，那時此刻</string>
+
+    <string name="coming_soon_1_date_release">上映日期：2017-02-17</string>
+    <string name="coming_soon_2_date_release">上映日期：2017-02-17</string>
+    <string name="coming_soon_3_date_release">上映日期：2017-02-17</string>
+    <string name="coming_soon_4_date_release">上映日期：2017-02-17</string>
+    <string name="coming_soon_5_date_release">上映日期：2017-02-17</string>
+
+    <string name="coming_soon_1_sub_title">類型：恐怖、懸疑/驚悚</string>
+    <string name="coming_soon_2_sub_title">類型：懸疑/驚悚</string>
+    <string name="coming_soon_3_sub_title">類型：喜劇、愛情</string>
+    <string name="coming_soon_4_sub_title">類型：動作、劇情、喜劇</string>
+    <string name="coming_soon_5_sub_title">類型：劇情、懸疑/驚悚</string>
+
+    <string name="top_1_title">分裂</string>
+    <string name="top_2_title">惡靈古堡：最終章</string>
+    <string name="top_3_title">海洋奇緣</string>
+    <string name="top_4_title">關鍵少數</string>
+    <string name="top_5_title">限制級戰警：重返極限</string>
+
+    <string name="top_1_date_release">上映日期：2017-02-03</string>
+    <string name="top_2_date_release">上映日期：2017-01-26</string>
+    <string name="top_3_date_release">上映日期：2017-01-26</string>
+    <string name="top_4_date_release">上映日期：2017-01-26</string>
+    <string name="top_5_date_release">上映日期：2017-01-20</string>
+
+    <string name="top_1_sub_title">類型：劇情、懸疑/驚悚</string>
+    <string name="top_2_sub_title">類型：動作、懸疑/驚悚</string>
+    <string name="top_3_sub_title">類型：動畫</string>
+    <string name="top_4_sub_title">類型：劇情</string>
+    <string name="top_5_sub_title">類型：動作、冒險、科幻</string>
+
 </resources>
