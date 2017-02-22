@@ -27,11 +27,11 @@ public class MovieData {
     public ArrayList<IMovieWrapper> getWeekMovieItemList() {
         ArrayList<IMovieWrapper> list = new ArrayList<>();
 
-        Drawable d1 = getImage(R.drawable.color1);
-        Drawable d2 = getImage(R.drawable.color2);
-        Drawable d3 = getImage(R.drawable.color3);
-        Drawable d4 = getImage(R.drawable.color4);
-        Drawable d5 = getImage(R.drawable.color5);
+        Drawable d1 = getImage(R.drawable.week_1);
+        Drawable d2 = getImage(R.drawable.week_2);
+        Drawable d3 = getImage(R.drawable.week_3);
+        Drawable d4 = getImage(R.drawable.week_4);
+        Drawable d5 = getImage(R.drawable.week_5);
 
         String tl1 = getTitle(R.string.week_1_title);
         String tl2 = getTitle(R.string.week_2_title);
@@ -64,11 +64,11 @@ public class MovieData {
     public ArrayList<IMovieWrapper> getComingSoonMovieItemList() {
         ArrayList<IMovieWrapper> list = new ArrayList<>();
 
-        Drawable d1 = getImage(R.drawable.color6);
-        Drawable d2 = getImage(R.drawable.color7);
-        Drawable d3 = getImage(R.drawable.color8);
-        Drawable d4 = getImage(R.drawable.color9);
-        Drawable d5 = getImage(R.drawable.color10);
+        Drawable d1 = getImage(R.drawable.soon_1);
+        Drawable d2 = getImage(R.drawable.soon_2);
+        Drawable d3 = getImage(R.drawable.soon_3);
+        Drawable d4 = getImage(R.drawable.soon_4);
+        Drawable d5 = getImage(R.drawable.soon_5);
 
         String tl1 = getTitle(R.string.coming_soon_1_title);
         String tl2 = getTitle(R.string.coming_soon_2_title);
@@ -101,11 +101,11 @@ public class MovieData {
     public ArrayList<IMovieWrapper> getTopMovieItemList() {
         ArrayList<IMovieWrapper> list = new ArrayList<>();
 
-        Drawable d1 = getImage(R.drawable.color11);
-        Drawable d2 = getImage(R.drawable.color12);
-        Drawable d3 = getImage(R.drawable.color13);
-        Drawable d4 = getImage(R.drawable.color14);
-        Drawable d5 = getImage(R.drawable.color15);
+        Drawable d1 = getImage(R.drawable.top1);
+        Drawable d2 = getImage(R.drawable.top2);
+        Drawable d3 = getImage(R.drawable.top3);
+        Drawable d4 = getImage(R.drawable.top4);
+        Drawable d5 = getImage(R.drawable.top5);
 
         String tl1 = getTitle(R.string.top_1_title);
         String tl2 = getTitle(R.string.top_2_title);
