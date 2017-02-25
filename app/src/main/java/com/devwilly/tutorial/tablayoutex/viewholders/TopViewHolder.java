@@ -3,6 +3,7 @@ package com.devwilly.tutorial.tablayoutex.viewholders;
 import com.devwilly.tutorial.tablayoutex.R;
 import com.devwilly.tutorial.tablayoutex.wrapper.TopMovieWrapper;
 
+import android.content.res.Resources;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,7 +32,8 @@ public class TopViewHolder extends MovieViewHolder<TopMovieWrapper> {
     @Override
     public void bindView(TopMovieWrapper wrapper) {
 
-        mPic.setImageDrawable(wrapper.getImage());
+        Resources res = itemView.getResources();
+        mPic.setImageDrawable(res.getDrawable(wrapper.getImageRes()));
         mTitle.setText(wrapper.getTitle());
         mDataRelease.setText(wrapper.getDateRelease());
         mSubTitle.setText(wrapper.getSubTitle());

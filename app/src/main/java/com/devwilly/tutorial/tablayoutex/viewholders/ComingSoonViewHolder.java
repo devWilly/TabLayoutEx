@@ -3,6 +3,7 @@ package com.devwilly.tutorial.tablayoutex.viewholders;
 import com.devwilly.tutorial.tablayoutex.R;
 import com.devwilly.tutorial.tablayoutex.wrapper.ComingSoonMovieWrapper;
 
+import android.content.res.Resources;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,7 +33,8 @@ public class ComingSoonViewHolder extends MovieViewHolder<ComingSoonMovieWrapper
 
     @Override
     public void bindView(ComingSoonMovieWrapper wrapper) {
-        mPic.setImageDrawable(wrapper.getImage());
+        Resources res = itemView.getResources();
+        mPic.setImageDrawable(res.getDrawable(wrapper.getImageRes()));
         mTitle.setText(wrapper.getTitle());
         mDataRelease.setText(wrapper.getDateRelease());
         mSubTitle.setText(wrapper.getSubTitle());
