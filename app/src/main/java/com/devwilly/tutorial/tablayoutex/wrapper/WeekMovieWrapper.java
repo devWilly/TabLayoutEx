@@ -22,18 +22,22 @@ public class WeekMovieWrapper implements IMovieWrapper {
         this.mSubTitle = subTl1;
     }
 
+    @Override
     public Drawable getImage() {
         return mDrawable;
     }
 
+    @Override
     public String getTitle() {
         return mTitle;
     }
 
+    @Override
     public String getDateRelease() {
         return mDate;
     }
 
+    @Override
     public String getSubTitle() {
         return mSubTitle;
     }
