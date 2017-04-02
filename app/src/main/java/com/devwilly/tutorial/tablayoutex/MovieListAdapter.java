@@ -3,6 +3,7 @@ package com.devwilly.tutorial.tablayoutex;
 import com.devwilly.tutorial.tablayoutex.viewholders.ComingSoonViewHolder;
 import com.devwilly.tutorial.tablayoutex.viewholders.EmptyViewHolder;
 import com.devwilly.tutorial.tablayoutex.viewholders.MovieViewHolder;
+import com.devwilly.tutorial.tablayoutex.viewholders.SectionHeaderViewHolder;
 import com.devwilly.tutorial.tablayoutex.viewholders.TopViewHolder;
 import com.devwilly.tutorial.tablayoutex.viewholders.WeekViewHolder;
 import com.devwilly.tutorial.tablayoutex.wrapper.IMovieWrapper;
@@ -33,6 +34,9 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieViewHolder>{
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         switch (viewType) {
+            case R.layout.vh_section_header:
+                view = inflater.inflate(R.layout.vh_section_header, parent, false);
+                return new SectionHeaderViewHolder(view);
             case R.layout.vh_item_week:
                 view = inflater.inflate(R.layout.vh_item_week, parent, false);
                 return new WeekViewHolder(view);

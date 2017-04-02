@@ -3,6 +3,7 @@ package com.devwilly.tutorial.tablayoutex.data;
 import com.devwilly.tutorial.tablayoutex.R;
 import com.devwilly.tutorial.tablayoutex.wrapper.ComingSoonMovieWrapper;
 import com.devwilly.tutorial.tablayoutex.wrapper.IMovieWrapper;
+import com.devwilly.tutorial.tablayoutex.wrapper.SectionHeaderWrapper;
 import com.devwilly.tutorial.tablayoutex.wrapper.TopMovieWrapper;
 import com.devwilly.tutorial.tablayoutex.wrapper.WeekMovieWrapper;
 
@@ -52,6 +53,7 @@ public class MovieData {
         String subTl5 = getSubTitle(R.string.week_5_sub_title);
 
 
+        list.add(new SectionHeaderWrapper());
         list.add(new WeekMovieWrapper(d1, tl1, date1, subTl1));
         list.add(new WeekMovieWrapper(d2, tl2, date2, subTl2));
         list.add(new WeekMovieWrapper(d3, tl3, date3, subTl3));
