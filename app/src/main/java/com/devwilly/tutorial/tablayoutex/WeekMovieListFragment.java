@@ -37,22 +37,9 @@ public class WeekMovieListFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
         GridLayoutManager manager = new GridLayoutManager(getContext(), 2);
-        manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(int position) {
-                if (adapter.getItemCount() == 0) {
-                    return 1;
-                }
-
-                int viewType = adapter.getItemViewType(position);
-
-                if (viewType == R.layout.vh_section_header) {
-                    return 2;
-                } else {
-                    return 1;
-                }
-            }
-        });
+        WeekMovieSpanSizeLookup spanSizeLookup = new WeekMovieSpanSizeLookup(adapter);
+        spanSizeLookup.setSpanIndexCacheEnabled(true);
+        manager.setSpanSizeLookup(spanSizeLookup);
         recyclerView.setLayoutManager(manager);
 
         return view;
