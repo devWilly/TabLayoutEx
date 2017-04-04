@@ -1,6 +1,9 @@
 package com.devwilly.tutorial.tablayoutex;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -16,8 +19,12 @@ public class WeekMovieItemDecoration extends RecyclerView.ItemDecoration {
     private static final int RV_FIRST_ITEM_POSITION = 1;
     private static final int RV_SECOND_ITEM_POSITION = 2;
 
+    private Paint mPaint;
+
     public WeekMovieItemDecoration(Context context) {
         this.mContext = context;
+        mPaint = new Paint();
+        mPaint.setColor(Color.parseColor("#ffff00"));
     }
 
     @Override
@@ -51,5 +58,33 @@ public class WeekMovieItemDecoration extends RecyclerView.ItemDecoration {
 
     private int getDimensionPixelSize(int resId) {
         return mContext.getResources().getDimensionPixelSize(resId);
+    }
+
+    @Override
+    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+
+        int itemCount = parent.getChildCount();
+
+        for (int i = 0; i < itemCount; i++) {
+            View child = parent.getChildAt(i);
+            int itemViewType = parent.getChildViewHolder(child).getItemViewType();
+
+            switch (itemViewType) {
+                case R.layout.vh_item_week:
+                    int childLeft = child.getLeft();
+                    int childTop = child.getTop();
+                    int childRight = child.getRight();
+                    int childBottom = child.getBottom();
+
+                    c.drawRect(childLeft, childTop, childRight, childBottom, mPaint);
+                    break;
+            }
+
+        }
+    }
+
+    @Override
+    public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
+        super.onDrawOver(c, parent, state);
     }
 }
