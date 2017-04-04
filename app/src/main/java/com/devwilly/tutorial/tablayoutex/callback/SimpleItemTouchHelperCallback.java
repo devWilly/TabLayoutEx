@@ -1,5 +1,6 @@
 package com.devwilly.tutorial.tablayoutex.callback;
 
+import com.devwilly.tutorial.tablayoutex.ItemTouchCallBack;
 import com.devwilly.tutorial.tablayoutex.MovieListAdapter;
 import com.devwilly.tutorial.tablayoutex.viewholders.WeekViewHolder;
 
@@ -13,6 +14,12 @@ import android.support.v7.widget.helper.ItemTouchHelper;
  */
 
 public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
+
+    private ItemTouchCallBack mItemTouchCallBack;
+
+    public SimpleItemTouchHelperCallback(ItemTouchCallBack callBack) {
+        this.mItemTouchCallBack = callBack;
+    }
 
     @Override
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
@@ -41,7 +48,7 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
         int toPosition = target.getAdapterPosition();
 
         if (toPosition > 0) {
-            ((MovieListAdapter)recyclerView.getAdapter()).onItemMove(fromPosition, toPosition);
+            mItemTouchCallBack.onItemMove(fromPosition, toPosition);
         }
 
 
@@ -50,6 +57,6 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-
+        mItemTouchCallBack.onItemSwipe(viewHolder, direction);
     }
 }

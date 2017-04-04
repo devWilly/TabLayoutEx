@@ -24,9 +24,14 @@ import java.util.Collections;
 public class MovieListAdapter extends RecyclerView.Adapter<MovieViewHolder> implements ItemTouchCallBack {
 
     private ArrayList<IMovieWrapper> mDataList = new ArrayList<>();
+    private OnItemSwipeListener mListener;
 
     public MovieListAdapter(ArrayList<IMovieWrapper> dataList) {
         this.mDataList = dataList;
+    }
+
+    public interface OnItemSwipeListener {
+        void onItemSwipe(RecyclerView.ViewHolder viewHolder, int direction);
     }
 
     @Override
@@ -74,8 +79,22 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieViewHolder> impl
         notifyItemMoved(fromPosition, toPosition);
     }
 
+    public void onItemDismiss(int position) {
+        mDataList.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void onItemInserted(IMovieWrapper item , int position) {
+        mDataList.add(position, item);
+        notifyItemInserted(position);
+    }
+
     @Override
     public void onItemSwipe(RecyclerView.ViewHolder viewHolder, int direction) {
+        mListener.onItemSwipe(viewHolder, direction);
+    }
 
+    public void setOnItemSwipeListener(OnItemSwipeListener listener) {
+        this.mListener = listener;
     }
 }
