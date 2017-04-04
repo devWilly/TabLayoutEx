@@ -3,6 +3,7 @@ package com.devwilly.tutorial.tablayoutex.callback;
 import com.devwilly.tutorial.tablayoutex.MovieListAdapter;
 import com.devwilly.tutorial.tablayoutex.viewholders.WeekViewHolder;
 
+import android.graphics.ImageFormat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
@@ -35,7 +36,16 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
     @Override
     public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
             RecyclerView.ViewHolder target) {
-        return false;
+
+        int fromPosition = viewHolder.getAdapterPosition();
+        int toPosition = target.getAdapterPosition();
+
+        if (toPosition > 0) {
+            ((MovieListAdapter)recyclerView.getAdapter()).onItemMove(fromPosition, toPosition);
+        }
+
+
+        return true;
     }
 
     @Override

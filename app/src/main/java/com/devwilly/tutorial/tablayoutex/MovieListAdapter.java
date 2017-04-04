@@ -14,13 +14,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 /**
  * Created by Willy on 2017/2/14.
  */
 
-public class MovieListAdapter extends RecyclerView.Adapter<MovieViewHolder>{
+public class MovieListAdapter extends RecyclerView.Adapter<MovieViewHolder> implements ItemTouchCallBack {
 
     private ArrayList<IMovieWrapper> mDataList = new ArrayList<>();
 
@@ -65,5 +66,16 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieViewHolder>{
     @Override
     public int getItemCount() {
         return mDataList.size();
+    }
+
+    @Override
+    public void onItemMove(int fromPosition, int toPosition) {
+        Collections.swap(mDataList, fromPosition, toPosition);
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
+    @Override
+    public void onItemSwipe(RecyclerView.ViewHolder viewHolder, int direction) {
+
     }
 }
