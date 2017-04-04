@@ -1,5 +1,8 @@
 package com.devwilly.tutorial.tablayoutex.callback;
 
+import com.devwilly.tutorial.tablayoutex.MovieListAdapter;
+import com.devwilly.tutorial.tablayoutex.viewholders.WeekViewHolder;
+
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
@@ -12,8 +15,20 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
     @Override
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-        int dragFlags = ItemTouchHelper.UP;
-        int swipeFlags = ItemTouchHelper.START;
+        int dragFlags = 0;
+        int swipeFlags = 0;
+
+        if (viewHolder instanceof WeekViewHolder) {
+            int itemPosition = viewHolder.getAdapterPosition();
+
+            // first and second item don't use ItemTouchHelper.UP flag
+            if (itemPosition == 1 || itemPosition == 2) {
+                dragFlags = ItemTouchHelper.DOWN | ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT;
+            } else {
+                dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT;
+            }
+            swipeFlags = ItemTouchHelper.START;
+        }
         return makeMovementFlags(dragFlags, swipeFlags);
     }
 
