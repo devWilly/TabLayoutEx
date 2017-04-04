@@ -1,8 +1,7 @@
 package com.devwilly.tutorial.tablayoutex;
 
 import com.devwilly.tutorial.tablayoutex.data.MovieData;
-import com.devwilly.tutorial.tablayoutex.helper.SimpleItemTouchHelperCallback;
-import com.devwilly.tutorial.tablayoutex.wrapper.IMovieWrapper;
+import com.devwilly.tutorial.tablayoutex.callback.SimpleItemTouchHelperCallback;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,8 +12,6 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import java.util.ArrayList;
 
 
 /**

@@ -1,4 +1,4 @@
-package com.devwilly.tutorial.tablayoutex.helper;
+package com.devwilly.tutorial.tablayoutex.callback;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
