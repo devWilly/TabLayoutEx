@@ -19,12 +19,14 @@ public class WeekMovieItemDecoration extends RecyclerView.ItemDecoration {
     private static final int RV_FIRST_ITEM_POSITION = 1;
     private static final int RV_SECOND_ITEM_POSITION = 2;
 
-    private Paint mPaint;
+    private Paint mPaint, mPaint1;
 
     public WeekMovieItemDecoration(Context context) {
         this.mContext = context;
         mPaint = new Paint();
+        mPaint1 = new Paint();
         mPaint.setColor(Color.parseColor("#ffff00"));
+        mPaint1.setColor(Color.parseColor("#ff00ff"));
     }
 
     @Override
@@ -85,6 +87,27 @@ public class WeekMovieItemDecoration extends RecyclerView.ItemDecoration {
 
     @Override
     public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
-        super.onDrawOver(c, parent, state);
+
+        int recyclerViewLeft = parent.getLeft();
+        int leftItemWidth = getDimensionPixelSize(R.dimen.movie_rv_left_margin);
+
+        int itemCount = parent.getChildCount();
+
+        for (int i = 0; i < itemCount; i++) {
+            View child = parent.getChildAt(i);
+            int itemViewType = parent.getChildViewHolder(child).getItemViewType();
+
+            switch (itemViewType) {
+                case R.layout.vh_item_week:
+                    int childTop = child.getTop();
+                    int childBottom = child.getBottom();
+
+                    c.drawRect(recyclerViewLeft, childTop, recyclerViewLeft + leftItemWidth, childBottom, mPaint1);
+                    break;
+            }
+
+        }
+
+
     }
 }
